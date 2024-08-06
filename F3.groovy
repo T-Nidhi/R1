@@ -1,12 +1,12 @@
 pipeline {
-    agent any
-
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
     stages {
-        stage('Name') {
+        stage('Test') {
             steps {
-                echo 'Hello this is Jenkins'
+                echo 'node --version'
             }
         }
     }
 }
-
